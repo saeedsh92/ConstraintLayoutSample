@@ -1,0 +1,80 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="drawerArrowStyle">@style/drawer_toggle</item>
+    </style>
+
+
+
+
+    <!--Default Toolbar Style..............................................................-->
+
+    <style name="toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="titleTextColor">@android:color/white</item>
+        <item name="subtitleTextColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/small_font_size</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+
+
+
+
+    <!--Text View Styles....................................................................-->
+    <style name="base_text_views">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="navigation_text_view" parent="base_text_views">
+        <item name="android:color">@android:color/white</item>
+        <item name="android:textSize">@dimen/normal_font_size</item>
+    </style>
+    
+    <style name="drawer_toggle" parent="Base.Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@android:color/white</item>
+    </style>
+
+
+
+
+
+
+
+    <!--Weather States Styles............................................................-->
+    <style name="weather_properties_icon">
+        <item name="android:layout_marginTop">@dimen/standard_margin</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+    <style name="weather_properties_textview" parent="base_text_views">
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">@dimen/standard_margin</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+
+
+
+    <!--Material dialog component styles......................................-->
+
+    <style name="material_action_buttons">
+        <item name="android:textColor">@drawable/selector_material_button</item>
+        <item name="android:textSize">@dimen/normal_font_size</item>
+    </style>
+    <style name="material_dialog_content_text_important">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/normal_font_size</item>
+    </style>
+    <style name="material_dialog_content_text_description">
+        <item name="android:textSize">@dimen/normal_font_size</item>
+    </style>
+</resources>

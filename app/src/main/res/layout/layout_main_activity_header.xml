@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:showIn="@layout/activity_main">
+
+    <ImageView
+        android:id="@+id/wallpaper"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_city_downtown"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/textview_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="NewYork"
+        android:textColor="@android:color/white"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/large_font_size"
+        android:fontFamily="sans-serif-light"
+        app:layout_constraintTop_toTopOf="@+id/wallpaper"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/wallpaper"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <TextView
+        android:id="@+id/textview_current_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="14\u00B0"
+        android:textSize="60dp"
+        android:textColor="@android:color/white"
+        android:fontFamily="sans-serif-thin"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_city"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintHorizontal_bias="0.31"
+        app:layout_constraintVertical_bias="0.32999998" />
+
+    <ImageView
+        android:id="@+id/current_temp_icon"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        tools:src="@drawable/ic_clearsky"
+        app:layout_constraintRight_toRightOf="@+id/wallpaper"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintLeft_toRightOf="@+id/textview_current_temp"
+        app:layout_constraintTop_toTopOf="@+id/textview_current_temp"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <TextView
+        android:id="@+id/current_temp_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="partialy cloudy"
+        android:textColor="@android:color/white"
+        android:fontFamily="sans-serif-light"
+        app:layout_constraintRight_toRightOf="@+id/wallpaper"
+        app:layout_constraintLeft_toLeftOf="@+id/wallpaper"
+        app:layout_constraintBottom_toBottomOf="@+id/wallpaper"
+        app:layout_constraintTop_toBottomOf="@+id/textview_current_temp" />
+
+</android.support.constraint.ConstraintLayout>

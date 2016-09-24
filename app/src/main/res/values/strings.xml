@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">WeatherS</string>
+
+    <!--Navigation Menu Strings-->
+    <string name="menu_navigation_main_screen">Main Screen</string>
+    <string name="menu_navigation_secondary_screen">Secondary Screen</string>
+    <string name="menu_navigation_change_location">Change Location</string>
+    <string name="menu_navigation_change_picture">Change Picture</string>
+    <string name="menu_navigation_setting">Setting</string>
+    <string name="menu_navigation_about_us">About Us</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="temp_celsius">\u2103</string>
+
+</resources>
