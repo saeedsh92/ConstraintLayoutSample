@@ -25,8 +25,6 @@ public class LocationChangerDialog extends DialogFragment {
         AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
         View view=LayoutInflater.from(getActivity()).inflate(R.layout.dialog_change_location,null,false);
         initViews(view);
-
-
         builder.setView(view);
         return builder.create();
     }

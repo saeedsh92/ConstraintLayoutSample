@@ -1,6 +1,8 @@
 package com.sshahini.constraintsampleweather.views.activities;
 
+import android.content.pm.PackageManager;
 import android.location.Location;
+import android.support.annotation.NonNull;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -28,6 +30,7 @@ import com.sshahini.constraintsampleweather.events.CityNameChanged;
 import com.sshahini.constraintsampleweather.events.CurrentWeatherInfoEvent;
 import com.sshahini.constraintsampleweather.events.ForecastWeatherInfoEvent;
 import com.sshahini.constraintsampleweather.events.LocationChangedEvent;
+import com.sshahini.constraintsampleweather.events.OnLocationPermissionDeniedEvent;
 import com.sshahini.constraintsampleweather.models.WeatherInfo;
 import com.sshahini.constraintsampleweather.utils.WeatherIconParser;
 import com.sshahini.constraintsampleweather.views.dialogs.LocationChangerDialog;
@@ -37,6 +40,7 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.jar.Manifest;
 
 public class MainActivity extends BaseActivity {
     private static final String TAG = "MainActivity";
@@ -176,6 +180,16 @@ public class MainActivity extends BaseActivity {
         Snackbar.make(coordinatorLayout, "Something wrong!!!", Snackbar.LENGTH_LONG).setAction("Retry", onClickListener).setActionTextColor(ContextCompat.getColor(this, R.color.colorPrimary)).show();
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode==LocationController.LOCATION_PERMISSION_REQUEST_CODE){
+            if (grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                getCurrentLocation();
+            }
+        }
+    }
+
     // Subscribe On Events
     ///////////////////////////////////////////////////////////////////////////
     @SuppressWarnings("unused")
@@ -236,6 +250,12 @@ public class MainActivity extends BaseActivity {
     public void onCityNameChangedEvent(CityNameChanged cityNameChanged) {
         getWeather(cityNameChanged.getNewCityName());
         getForecastData(cityNameChanged.getNewCityName());
+    }
+
+    @SuppressWarnings("unused")
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onLocationPermissionDeniedEvent(OnLocationPermissionDeniedEvent onLocationPermissionDeniedEvent){
+        Snackbar.make(coordinatorLayout,OnLocationPermissionDeniedEvent.MESSAGE,Snackbar.LENGTH_LONG);
     }
 
 

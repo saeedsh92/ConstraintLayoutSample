@@ -10,6 +10,7 @@ public class BaseWeatherInfoEvent {
     public BaseWeatherInfoEvent(Exception exception){
         this.exception=exception;
     }
+
     public Exception getException() {
         return exception;
     }

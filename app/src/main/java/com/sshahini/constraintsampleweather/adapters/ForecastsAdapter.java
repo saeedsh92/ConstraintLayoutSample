@@ -1,6 +1,8 @@
 package com.sshahini.constraintsampleweather.adapters;
 
 import android.content.Context;
+import android.support.graphics.drawable.VectorDrawableCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,8 +40,9 @@ public class ForecastsAdapter extends RecyclerView.Adapter<ForecastsAdapter.Fore
         holder.minTempTextView.setText(String.valueOf(weatherInfo.getMinTemp())+WeatherInfo.TEMPERATURE_CELSIUS);
         holder.maxTempTextView.setText(String.valueOf(weatherInfo.getMaxTemp())+WeatherInfo.TEMPERATURE_CELSIUS);
         holder.dayNameTextView.setText(weatherInfo.getDate());
-
-        holder.weatherImageView.setImageDrawable(weatherIconParser.getIcon(weatherInfo.getId()));
+        VectorDrawableCompat weatherIcon=weatherIconParser.getIcon(weatherInfo.getId());
+        weatherIcon.setTint(ContextCompat.getColor(context,R.color.colorAccent));
+        holder.weatherImageView.setImageDrawable(weatherIcon);
     }
 
     @Override
